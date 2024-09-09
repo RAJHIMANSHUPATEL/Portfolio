@@ -570,7 +570,7 @@ TECH STACK
 .stack{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  gap: 2rem;
 }
 .stack article {
   display: flex;
