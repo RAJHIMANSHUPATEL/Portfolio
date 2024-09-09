@@ -298,7 +298,6 @@ HERO CSS
   background: var(--orange);
   display: flex;
   padding: 5rem 0;
-  padding-top: 0;
 }
 
 .img-container{
