@@ -445,7 +445,9 @@ PROJECTS
 NAVBAR 
 ============ 
  */
- header {
+header {
+  position: fixed;
+  width: 100%;
   background: var(--orange);
   z-index: 1000;
   height: 5rem;
@@ -462,7 +464,7 @@ NAVBAR
 
 @media screen and (min-width: 470px) {
   .navbar{
-    max-width: 95vw;
+    max-width: 90vw;
   }
 }
 
