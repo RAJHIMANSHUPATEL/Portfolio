@@ -10,15 +10,15 @@ function Contact() {
             <div className="form">
                 <form action="https://formspree.io/f/xanwkkdr" method='POST'>
                     <div className="connection-info">
-                        <input type="text" required     placeholder='FIRST NAME *' 
+                        <input type="text" required placeholder='FIRST NAME *' 
                         name='firstname'
                         autoComplete='off'
                         />
-                        <input type="text" required     placeholder='LAST NAME *' 
+                        <input type="text" required placeholder='LAST NAME *' 
                         name='lastname'
                         autoComplete='off'
                         />
-                        <input type="email" required     placeholder='EMAIL *' 
+                        <input type="email" required placeholder='EMAIL *' 
                         name='email'
                         autoComplete='off'
                         />

@@ -127,6 +127,7 @@ body {
   font-weight: 400;
   line-height: 1;
   color: var(--textColor);
+  overflow-x: hidden;
 }
 p {
   margin: 0;
@@ -297,6 +298,7 @@ HERO CSS
   background: var(--orange);
   display: flex;
   padding: 5rem 0;
+  padding-top: 0;
 }
 
 .img-container{
@@ -445,21 +447,23 @@ NAVBAR
  */
  header {
   background: var(--orange);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   z-index: 1000;
   height: 5rem;
 }
 
 .navbar {
-  max-width: 90vw;
+  max-width: 95vw;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 5rem;
+}
+
+@media screen and (min-width: 470px) {
+  .navbar{
+    max-width: 95vw;
+  }
 }
 
 .logo {
@@ -608,7 +612,7 @@ CONTACT
 
 .connection-info{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:1fr;
   gap: 20px;
 }
 
@@ -630,10 +634,17 @@ CONTACT
   max-width: 100%;
   resize: vertical;
   padding: 15px 10px;
+  border: 1px solid black;
   box-sizing: border-box;
 }
 
-
+@media screen and (min-width: 470px) {
+  .connection-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
 
 /*
 =============
@@ -646,11 +657,20 @@ Footer
 }
 
 .footer-section{
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
-  place-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    place-items: left;
 }
+@media screen and (min-width: 470px) {
+  .footer-section{
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    place-items: center;
+  }
+}
+
+
 
 .footer-title h2{
   text-transform: uppercase;
