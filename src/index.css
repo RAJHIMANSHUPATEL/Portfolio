@@ -663,13 +663,6 @@ Footer
     gap: 20px;
     place-items: left;
 }
-@media screen and (min-width: 470px) {
-  .footer-section{
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    place-items: center;
-  }
-}
 
 
 
@@ -697,4 +690,38 @@ Footer
   text-align: center;
   padding-bottom: 15px;
   border-bottom: 10px solid var(--red-dark);
+}
+
+.greetings{
+  font-family: "Exo 2", sans-serif;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: var(--black);
+  color: white;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 110000;
+  opacity: 1;
+  transition: all ease-out 1s;
+  transform: translate(0);
+  
+}
+
+.greetings.fade-out {
+  transform: translateY(-100%);
+}
+
+@media screen and (min-width: 470px) {
+  .footer-section{
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    place-items: center;
+  }
+
+  .greetings{
+    font-size: 5rem;
+  }
 }
