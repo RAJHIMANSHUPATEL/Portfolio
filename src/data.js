@@ -10,8 +10,8 @@ export const projects = [
     image: '/assets/workout-buddy.png',
   },
   {
-    title: 'countries api',
-    url: 'https://countries-api-seven-orcin.vercel.app/',
-    image: '/assets/countries-api.png',
+    title: 'currency converter',
+    url: 'https://currency-converter-xi-rust.vercel.app/',
+    image: '/assets/currency-converter.png',
   },
 ];
