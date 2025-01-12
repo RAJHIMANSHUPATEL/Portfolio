@@ -17,8 +17,8 @@ function Greetings() {
             const timer = setTimeout(() => {
                 setGreetings(data[index]);
                 setIndex(index + 1);
-            }, 450); // Change 1000 to the desired time delay in milliseconds
-            return () => clearTimeout(timer); // Clean up timeout on component unmount
+            }, 450);
+            return () => clearTimeout(timer);
         }
     }, [index]);
 

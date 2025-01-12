@@ -2,6 +2,8 @@ import React from 'react'
 import { FaPlus } from "react-icons/fa";
 
 function Footer() {
+    const currentDate = new Date()
+    const currentYear = currentDate.getFullYear()
     return (
         <div className='footer'>
             <section className="section section-center footer-section">
@@ -35,7 +37,7 @@ function Footer() {
                 </div>
             </section>
             <div className="copyright">
-            © Copyright 2024 - <span>Himanshu Raj Patel</span>
+            © Copyright {currentYear} - <span>Himanshu Raj Patel</span>
             </div>
         </div>
     )
