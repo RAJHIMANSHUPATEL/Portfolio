@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import TechStack from '../components/TechStack';
 import Greetings from '../components/Greetings';
+import Experience from '../components/Experience';
 
 
 function Home() {
@@ -37,6 +38,7 @@ function Home() {
                         <Hero />
                         <About />
                         <TechStack />
+                        <Experience />
                         <Projects />
                         <Contact />
                         <Footer />

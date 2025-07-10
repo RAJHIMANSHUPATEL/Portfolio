@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Contact() {
+
     return (
         <div className='contact' id='contact'>
             <section className="section section-center">
