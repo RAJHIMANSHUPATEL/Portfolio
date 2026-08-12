@@ -9,6 +9,8 @@ import Greetings from '../components/Greetings';
 import Experience from '../components/Experience';
 
 const INTRO_KEY = 'portfolio-intro-seen';
+const INTRO_HOLD_MS = 1600;
+const INTRO_FADE_MS = 800;
 
 function Home() {
   const [loading, setLoading] = useState(() => {
@@ -23,11 +25,11 @@ function Home() {
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
       sessionStorage.setItem(INTRO_KEY, '1');
-    }, 1600);
+    }, INTRO_HOLD_MS);
 
     const hideTimer = setTimeout(() => {
       setLoading(false);
-    }, 2200);
+    }, INTRO_HOLD_MS + INTRO_FADE_MS);
 
     return () => {
       clearTimeout(fadeTimer);

@@ -273,18 +273,22 @@ header {
   inset: var(--header-h) 0 0;
   padding-top: 2rem;
   background: var(--white);
-  transition: transform 0.5s ease-in-out;
   transform: translateX(100%);
   z-index: 999;
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    transform 0.5s ease-in-out,
+    visibility 0s linear 0.5s;
 }
 
 .accordion.is-open {
   transform: translateX(0);
-}
-
-.accordion:not(.is-open) {
-  pointer-events: none;
-  visibility: hidden;
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    transform 0.5s ease-in-out,
+    visibility 0s linear 0s;
 }
 
 .accordion ul {
