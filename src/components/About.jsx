@@ -1,27 +1,27 @@
-    import React from 'react'
-    import bannerImg from '/assets/banner-image.png'
+import { profile } from '../data';
 
-    function About() {
-    return (
-        <div className="about" id='about'>
-            <section className='about-center section section-center'>
-            <div className="title">
-            <h2>About</h2>
-            <div className="title-underline"></div>
-            </div>
-            <div className="about-info">
-            <article>
-            <p>My name is Himanshu Raj Patel. I’m a frontend software engineer & freelance web developer in India. I'm passionate about music, technology and basically everything that makes the internet tick.</p>
-            <p>
-            Whether you're a business owner looking to get started on a app or web development project with a freelance web developer, a developer looking to collaborate on something cool, or just wanting to say hi, shoot me a message and let's work together.
-            </p>
-            </article>
-            <img src={bannerImg} alt="banner-img" />
-            </div>
-            
-        </section>
+function About() {
+  return (
+    <section className="about section" id="about">
+      <div className="section-center">
+        <div className="section-heading">
+          <p className="section-label">About</p>
+          <h2>Backend systems, real impact</h2>
         </div>
-    )
-    }
+        <div className="about-info">
+          {profile.summary.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <p className="about-direction">
+            Direction: Software Engineer → Backend Engineer → Backend
+            Infrastructure / Systems → Distributed Systems & Backend Architecture
+            — built from production work in caching, concurrency, real-time
+            pipelines, and high-throughput integrations, not from buzzwords.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-    export default About
+export default About;

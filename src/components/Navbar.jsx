@@ -1,46 +1,75 @@
-import { useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoMdClose } from "react-icons/io";
+import { useState } from 'react';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { IoMdClose } from 'react-icons/io';
 
-const Navbar = ()=> {
-    const [navOpen, setNavOpen] = useState(false);
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#work', label: 'Work' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#contact', label: 'Contact' },
+];
 
-    const handleAccordion = ()=> {
-        setNavOpen(!navOpen)
-    }
-    
-    return(
-        <header>
-            <div className="navbar">
-                <a className="logo" href="#hero" >
-                    <div className="square1"></div>
-                    <div className="square2"></div>
-                </a>
-                {
-                    !navOpen? <RxHamburgerMenu className="menu-icon" onClick={handleAccordion}/>
-                    : <IoMdClose className="close-icon" onClick={handleAccordion}/>
-                }
-                <div className="nav-info">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#tech-stack">Tech-Stack</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-                </div>
-            </div>
-            <div className={`accordion ${!navOpen ? "open" : "close"}`}>
-            <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#tech-stack">Tech-Stack</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-            </div>
-        </header>
-    )
-}
+const Navbar = () => {
+  const [navOpen, setNavOpen] = useState(false);
 
-export default Navbar
+  const closeNav = () => setNavOpen(false);
+
+  return (
+    <header>
+      <div className="navbar">
+        <a className="logo" href="#hero" aria-label="Home" onClick={closeNav}>
+          <div className="square1" aria-hidden="true"></div>
+          <div className="square2" aria-hidden="true"></div>
+        </a>
+        {!navOpen ? (
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-label="Open menu"
+            aria-expanded={false}
+            onClick={() => setNavOpen(true)}
+          >
+            <RxHamburgerMenu className="menu-icon" aria-hidden="true" />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-label="Close menu"
+            aria-expanded={true}
+            onClick={() => setNavOpen(false)}
+          >
+            <IoMdClose className="close-icon" aria-hidden="true" />
+          </button>
+        )}
+        <nav className="nav-info" aria-label="Primary">
+          <ul>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+      <nav
+        className={`accordion ${navOpen ? 'is-open' : ''}`}
+        aria-label="Mobile"
+        aria-hidden={!navOpen}
+      >
+        <ul>
+          {links.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} onClick={closeNav}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Navbar;

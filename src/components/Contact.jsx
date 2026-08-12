@@ -1,51 +1,90 @@
-import React from 'react'
+import { profile } from '../data';
 
 function Contact() {
-
-    return (
-        <div className='contact' id='contact'>
-            <section className="section section-center">
-            <div>
-                <h2>LET'S BUILD A THING TOGETHER</h2>
-            </div>
-            <div className="form">
-                <form action="https://formspree.io/f/xanwkkdr" method='POST'>
-                    <div className="connection-info">
-                        <input type="text" required placeholder='FIRST NAME *' 
-                        name='firstname'
-                        autoComplete='off'
-                        />
-                        <input type="text" required placeholder='LAST NAME *' 
-                        name='lastname'
-                        autoComplete='off'
-                        />
-                        <input type="email" required placeholder='EMAIL *' 
-                        name='email'
-                        autoComplete='off'
-                        />
-                        <input type="phone" placeholder='PHONE' 
-                        name='username'
-                        autoComplete='off'
-                        />
-                    </div>
-                    <input type="text"   required           placeholder='SUBJECT *' 
-                        name='subject'
-                        autoComplete='off'
-                        className='contact-subject'
-                    />
-                    <textarea 
-                    className='text-area'
-                    name="message"
-                    required
-                    placeholder='MESSAGE *'autoComplete='off'
-                    >
-                    </textarea>
-                    <input className='btn' type="submit" value="SEND IT"/>
-                </form>
-            </div>
-            </section>
+  return (
+    <section className="contact section" id="contact">
+      <div className="section-center">
+        <div className="section-heading">
+          <p className="section-label">Contact</p>
+          <h2>Let&apos;s talk systems and shipping</h2>
+          <p className="section-intro">
+            Open to roles and collaborations focused on backend engineering,
+            real-time systems, and production infrastructure problems.
+          </p>
         </div>
-    )
+        <div className="contact-layout">
+          <form
+            className="contact-form"
+            action="https://formspree.io/f/xanwkkdr"
+            method="POST"
+          >
+            <div className="form-row">
+              <label htmlFor="name">
+                Name
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  required
+                  autoComplete="name"
+                />
+              </label>
+              <label htmlFor="email">
+                Email
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  required
+                  autoComplete="email"
+                />
+              </label>
+            </div>
+            <label htmlFor="subject">
+              Subject
+              <input id="subject" type="text" name="subject" required />
+            </label>
+            <label htmlFor="message">
+              Message
+              <textarea
+                id="message"
+                className="text-area"
+                name="message"
+                required
+                rows={6}
+              />
+            </label>
+            <button className="btn btn-primary" type="submit">
+              Send message
+            </button>
+          </form>
+          <aside className="contact-aside">
+            <p>Prefer a direct channel?</p>
+            <ul>
+              <li>
+                <a
+                  href={profile.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href={profile.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default Contact
+export default Contact;

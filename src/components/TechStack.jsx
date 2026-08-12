@@ -1,73 +1,32 @@
-import React from 'react';
-import { SiMongodb, SiExpress, SiTailwindcss, SiGithub } from "react-icons/si";
-import { FaReact, FaNodeJs, FaCss3, FaJava } from "react-icons/fa";
-import { TiHtml5 } from "react-icons/ti";
-import { RiBootstrapLine } from "react-icons/ri";
-import { TbSql } from "react-icons/tb";
-import { GrMysql } from "react-icons/gr";
-
+import { skillGroups } from '../data';
 
 function TechStack() {
-    return (
-        <div className='tech-stack' id='tech-stack'>
-            <section className="section section-center">
-                <div className="tech-title">
-                    <h2>Tech Stack</h2>
-                    <div className="title-underline"></div>
-                </div>
-                <div className="stack-grid">
-                    <article className="tech-card">
-                        <FaJava className="tech-icon" />
-                        <h4>Java</h4>
-                    </article>
-                    <article className="tech-card">
-                        <SiMongodb className="tech-icon" />
-                        <h4>MongoDB</h4>
-                    </article>
-                    <article className="tech-card">
-                        <SiExpress className="tech-icon" />
-                        <h4>Express</h4>
-                    </article>
-                    <article className="tech-card">
-                        <FaReact className="tech-icon" />
-                        <h4>React</h4>
-                    </article>
-                    <article className="tech-card">
-                        <FaNodeJs className="tech-icon" />
-                        <h4>Node</h4>
-                    </article>
-                    <article className="tech-card">
-                        <TiHtml5 className="tech-icon" />
-                        <h4>HTML</h4>
-                    </article>
-                    <article className="tech-card">
-                        <FaCss3 className="tech-icon" />
-                        <h4>CSS</h4>
-                    </article>
-                    <article className="tech-card">
-                        <SiTailwindcss className="tech-icon" />
-                        <h4>Tailwind</h4>
-                    </article>
-                    <article className="tech-card">
-                        <RiBootstrapLine className="tech-icon" />
-                        <h4>Bootstrap</h4>
-                    </article>
-                    <article className="tech-card">
-                        <TbSql className="tech-icon" />
-                        <h4>SQL</h4>
-                    </article>
-                    <article className="tech-card">
-                        <GrMysql className="tech-icon" />
-                        <h4>MySQL</h4>
-                    </article>
-                    <article className="tech-card">
-                        <SiGithub className="tech-icon" />
-                        <h4>GitHub</h4>
-                    </article>
-                </div>
-            </section>
+  return (
+    <section className="tech-stack section" id="skills">
+      <div className="section-center">
+        <div className="section-heading">
+          <p className="section-label">Skills</p>
+          <h2>Tools I use in production</h2>
+          <p className="section-intro">
+            Backend and data systems first. Frontend listed as supporting
+            capability for full-stack delivery.
+          </p>
         </div>
-    );
+        <div className="skills-grid">
+          {skillGroups.map((group) => (
+            <div className="skill-group" key={group.title}>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default TechStack;
