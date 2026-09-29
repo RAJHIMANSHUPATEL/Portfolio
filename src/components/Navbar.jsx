@@ -5,7 +5,7 @@ import { IoMdClose } from 'react-icons/io';
 const links = [
   { href: '#about', label: 'About' },
   { href: '#experience', label: 'Experience' },
-  { href: '#work', label: 'Work' },
+  { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
   { href: '#contact', label: 'Contact' },
 ];

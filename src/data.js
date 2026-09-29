@@ -48,42 +48,35 @@ export const experience = [
   },
 ];
 
-export const selectedWork = [
+export const projects = [
   {
-    title: 'Real-time Ballistic Tracking',
-    context: 'Krishworks · Defense / Indian Army',
-    stack: ['Go', 'Gin', 'PostgreSQL', 'Flyway', 'MQTT'],
-    problem:
-      'Low-latency ingestion and processing of ballistic telemetry with reliable hit detection and persistence.',
-    impact:
-      'Event streaming pipeline for real-time tracking, hit detection, and durable storage under operational constraints.',
-  },
-  {
-    title: 'Delivery Logistics Platform',
-    context: 'Krishworks · Logistics',
-    stack: ['APIs', 'Courier integrations', 'PostgreSQL', 'Real-time pricing'],
-    problem:
-      'Unify multiple courier partners behind one system for serviceability, TAT, and tariff decisions at request volume.',
-    impact:
-      'Integrated 5+ partners including Delhivery and DTDC; handled thousands of requests; cut manual processing time by 70%.',
-  },
-  {
-    title: 'Multiplayer Game Server Optimization',
-    context: 'Krishworks · Real-time systems',
-    stack: ['Redis', 'PostgreSQL', 'Concurrency'],
-    problem:
-      'CPU and coordination bottlenecks limited concurrent multiplayer capacity on constrained hardware.',
-    impact:
-      'Redis-based coordination reduced CPU usage by 35% and enabled 200 concurrent sessions (6 players each) on a 2GB server.',
-  },
-  {
-    title: 'Firebase Cost & Read Optimization',
-    context: 'Krishworks · Performance',
-    stack: ['Redis', 'Caching', 'Data access patterns'],
-    problem:
-      'High Firebase read volume drove cost and unnecessary load on the data path.',
-    impact:
-      'Redis caching and optimized access patterns reduced Firebase read operations by 80%.',
+    title: 'Maati',
+    summary:
+      'Grocery system for the Noida and Delhi dark stores. One catalog behind a storefront, a staff CRM, and a cash till.',
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux', 'JWT'],
+    showcases: [
+      {
+        title: 'Ecom',
+        summary: 'Cash-on-delivery shop with store-scoped coupons.',
+        image: '/projects/maati-ecom.svg',
+        github: 'https://github.com/RAJHIMANSHUPATEL/Maati-ecom',
+        portal: 'https://maati-shop.vercel.app',
+      },
+      {
+        title: 'CRM',
+        summary: 'Catalog, stock, orders, and till settings.',
+        image: '/projects/maati-crm.svg',
+        github: 'https://github.com/RAJHIMANSHUPATEL/Maati-crm',
+        portal: 'https://maati-crm.vercel.app',
+      },
+      {
+        title: 'POS',
+        summary: 'Cash till for one store, with same-day void and receipt reprint.',
+        image: '/projects/maati-pos.svg',
+        github: 'https://github.com/RAJHIMANSHUPATEL/Maati-pos',
+        portal: 'https://maati-pos.vercel.app',
+      },
+    ],
   },
 ];
 

@@ -11,8 +11,8 @@ const Hero = () => {
           <h1>{profile.name}</h1>
           <p className="hero-tagline">{profile.tagline}</p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#work">
-              View selected work
+            <a className="btn btn-primary" href="#projects">
+              View projects
             </a>
             <a
               className="btn btn-secondary"
